@@ -16,79 +16,61 @@
     </modules>
 
     <properties>
-        <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
-        <spring.boot.version>2.1.4.RELEASE</spring.boot.version>
-        <spring.platform.version>Cairo-SR8</spring.platform.version>
         <java.version>1.8</java.version>
         <mica.auto.version>1.1.0</mica.auto.version>
         <!-- Mybatis plus 版本号-->
         <com.baomidou.version>3.2.0</com.baomidou.version>
-        <druid.spring.boot.starter.version>1.1.21</druid.spring.boot.starter.version>
         <swagger.version>2.9.2</swagger.version>
         <swagger.models.version>1.5.21</swagger.models.version>
+
+        <jakarta.servlet.version>4.0.3</jakarta.servlet.version>
+        <okhttp.version>3.11.0</okhttp.version>
+        <guava.version>26.0-jre</guava.version>
+        <lombok.version>1.18.6</lombok.version>
+        <com.alibaba.druid>1.1.21</com.alibaba.druid>
+        <alibaba.fastjson.version>1.2.62</alibaba.fastjson.version>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring.cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.spring.platform</groupId>
-                <artifactId>platform-bom</artifactId>
-                <version>${spring.platform.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-  <!--  <dependencies>
+    <dependencies>
+        <!-- Mybatis plus-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${com.baomidou.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.retry</groupId>
-            <artifactId>spring-retry</artifactId>
-        </dependency>
+        <!-- loobook -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- bean 自动注入生产META-INF bean配置文件的jar包 -->
         <dependency>
             <groupId>net.dreamlu</groupId>
             <artifactId>mica-auto</artifactId>
             <version>${mica.auto.version}</version>
             <scope>provided</scope>
         </dependency>
-    </dependencies>-->
+        <!--Swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>${swagger.models.version}</version>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <finalName>${project.name}</finalName>

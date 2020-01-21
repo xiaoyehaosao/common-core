@@ -12,21 +12,13 @@
     <artifactId>common-core-boot</artifactId>
 
     <dependencies>
-        <!-- Mybatis plus-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${com.baomidou.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid.spring.boot.starter.version}</version>
+            <artifactId>druid</artifactId>
+            <version>${com.alibaba.druid}</version>
         </dependency>
+
     </dependencies>
 
 
