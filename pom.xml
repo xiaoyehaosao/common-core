@@ -29,6 +29,7 @@
         <lombok.version>1.18.6</lombok.version>
         <com.alibaba.druid>1.1.21</com.alibaba.druid>
         <alibaba.fastjson.version>1.2.62</alibaba.fastjson.version>
+        <bean.version> 1.9.3</bean.version>
     </properties>
 
     <dependencies>
@@ -52,23 +53,12 @@
             <version>${mica.auto.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!--Swagger-->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.swagger</groupId>
-                    <artifactId>swagger-models</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${bean.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-models</artifactId>
-            <version>${swagger.models.version}</version>
-        </dependency>
+
 
     </dependencies>
 

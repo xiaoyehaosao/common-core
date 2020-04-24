@@ -92,4 +92,40 @@ public interface MyConstants {
 	 */
 	String DEFAULT_UNAUTHORIZED_MESSAGE = "签名认证失败";
 
+	/**
+	 * 默认页码
+	 */
+	int DEFAULT_PAGE = 1;
+
+	/**
+	 * 默认每页数量
+	 */
+	int  DEFAULT_LIMIT = 10;
+
+	/**
+	 * 页码 KEY
+	 */
+	public  String PAGE_KEY = "page";
+	/**
+	 * 显示条数 KEY
+	 */
+	public  String PAGE_LIMIT_KEY = "limit";
+	/**
+	 * 排序字段 KEY
+	 */
+	public  String PAGE_SORT_KEY = "sort";
+	/**
+	 * 排序方向 KEY
+	 */
+	public  String PAGE_ORDER_KEY = "order";
+
+	/**
+	 * 默认最小页码
+	 */
+	public  int MIN_PAGE = 0;
+	/**
+	 * 最大显示条数
+	 */
+	public  int MAX_LIMIT = 999;
+
 }

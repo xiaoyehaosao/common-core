@@ -16,8 +16,6 @@
 package com.xyhs.b2c.common.tools.api;
 
 import com.xyhs.b2c.common.tools.constant.MyConstants;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -37,19 +35,14 @@ import java.util.Optional;
 @Getter
 @Setter
 @ToString
-@ApiModel(description = "返回信息")
 @NoArgsConstructor
 public class R<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@ApiModelProperty(value = "状态码", required = true)
 	private int code;
-	@ApiModelProperty(value = "是否成功", required = true)
 	private boolean success;
-	@ApiModelProperty(value = "承载数据")
 	private T data;
-	@ApiModelProperty(value = "返回消息", required = true)
 	private String msg;
 
 	private R(IResultCode resultCode) {
