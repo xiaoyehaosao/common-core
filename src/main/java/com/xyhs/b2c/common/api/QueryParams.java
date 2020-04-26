@@ -1,6 +1,6 @@
-package com.xyhs.b2c.common.tools.api;
+package com.xyhs.b2c.common.api;
 
-import com.xyhs.b2c.common.tools.constant.MyConstants;
+import com.xyhs.b2c.common.constant.MyConstants;
 import lombok.Data;
 
 import java.io.Serializable;

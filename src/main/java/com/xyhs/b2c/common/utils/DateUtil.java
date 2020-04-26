@@ -1,4 +1,4 @@
-package com.xyhs.b2c.common.tools.utils;
+package com.xyhs.b2c.common.utils;
 
 import lombok.experimental.UtilityClass;
 import org.springframework.util.Assert;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xyhs.b2c.common.tools.utils;
+package com.xyhs.b2c.common.utils;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

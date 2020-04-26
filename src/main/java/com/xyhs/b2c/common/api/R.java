@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xyhs.b2c.common.tools.api;
+package com.xyhs.b2c.common.api;
 
-import com.xyhs.b2c.common.tools.constant.MyConstants;
+import com.xyhs.b2c.common.constant.MyConstants;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

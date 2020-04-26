@@ -1,11 +1,10 @@
-package com.xyhs.b2c.common.tools.utils;
+package com.xyhs.b2c.common.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.toolkit.ArrayUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -17,11 +16,11 @@ public class BeanConvertUtils {
     /**
      * 方法说明：将bean转化为另一种bean实体
      * 
-     * @param object
-     * @param entityClass
-     * @return
+     * @param object  要拷贝的对象
+     * @param entityClass  拷贝的目标的对象
+     * @return 拷贝的目标的对象
      */
-    public static <T> T convertBean(Object object, Class<T> entityClass) {
+    public static <T> T convert(Object object, Class<T> entityClass) {
         if(null == object) {
             return null;
         }
@@ -35,7 +34,7 @@ public class BeanConvertUtils {
      * @param source	原对象
      * @param target	目标对象
      * @param ignoreProperties	排除要copy的属性
-     * @return
+     * @return 拷贝的目标的对象
      */
     public static <T> T copy(Object source, Class<T> target, String...ignoreProperties){
         T targetInstance = null;
@@ -43,6 +42,9 @@ public class BeanConvertUtils {
             targetInstance = target.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        if(targetInstance == null){
+            return null;
         }
         if(ArrayUtils.isEmpty(ignoreProperties)) {
             BeanUtils.copyProperties(source, targetInstance);
@@ -59,7 +61,7 @@ public class BeanConvertUtils {
      * @param list	原对象
      * @param target	目标对象
      * @param ignoreProperties	排除要copy的属性
-     * @return
+     * @return 拷贝的目标的对象队列
      */
     public static <T, E> List<T> copyList(List<E> list, Class<T> target, String...ignoreProperties){
         List<T> targetList = new ArrayList<>();
@@ -78,7 +80,7 @@ public class BeanConvertUtils {
      * 
      * @param list	原对象
      * @param target	目标对象
-     * @return
+     * @return 拷贝的目标的对象队列
      */
     public static <T, E> List<T> copyList(List<E> list, Class<T> target){
         List<T> targetList = new ArrayList<>();
@@ -86,7 +88,7 @@ public class BeanConvertUtils {
             return targetList;
         }
         for(E e : list) {
-            targetList.add(convertBean(e, target));
+            targetList.add(convert(e, target));
         }
         return targetList;
     }
@@ -95,12 +97,9 @@ public class BeanConvertUtils {
     /**
      * 方法说明：map转化为对象
      * 
-     * @param map
-     * @param t
-     * @return
-     * @throws InstantiationException
-     * @throws IllegalAccessException
-     * @throws InvocationTargetException
+     * @param map 要拷贝的map
+     * @param t 拷贝的目标对象
+     * @return  拷贝的目标对象
      */
     public static <T> T mapToObject(Map<String, Object> map, Class<T> t){
         try {
@@ -115,11 +114,11 @@ public class BeanConvertUtils {
     /**
      * 方法说明：对象转化为Map
      * 
-     * @param object
-     * @return
+     * @param object 要拷贝的对象
+     * @return 拷贝的目标map
      */
     public static Map<?, ?> objectToMap(Object object){
-        return convertBean(object, Map.class);
+        return convert(object, Map.class);
     }
 
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xyhs.b2c.common.tools.constant;
+package com.xyhs.b2c.common.constant;
 
 /**
  * 系统常量

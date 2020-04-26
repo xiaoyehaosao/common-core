@@ -1,11 +1,11 @@
-package com.xyhs.b2c.common.tools.api;
+package com.xyhs.b2c.common.api;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.common.collect.Maps;
-import com.xyhs.b2c.common.tools.constant.MyConstants;
-import com.xyhs.b2c.common.tools.utils.BeanConvertUtils;
+import com.xyhs.b2c.common.constant.MyConstants;
+import com.xyhs.b2c.common.utils.BeanConvertUtils;
 
 import java.io.Serializable;
 import java.util.Map;

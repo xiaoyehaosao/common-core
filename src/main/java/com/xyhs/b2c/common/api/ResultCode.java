@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xyhs.b2c.common.tools.api;
+package com.xyhs.b2c.common.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

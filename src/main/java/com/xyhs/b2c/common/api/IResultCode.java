@@ -13,28 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xyhs.b2c.common.boot;
+package com.xyhs.b2c.common.api;
 
-import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import java.io.Serializable;
 
 /**
- * mybatisplus 配置
+ * 业务代码接口
  *
  * @author Chill
  */
-@Configuration
-@MapperScan("com.xyhs.b2c.**.mapper.**")
-public class MybatisPlusConfiguration {
+public interface IResultCode extends Serializable {
 
-	@Bean
-	@ConditionalOnMissingBean(PaginationInterceptor.class)
-	public PaginationInterceptor paginationInterceptor() {
-		return new PaginationInterceptor();
-	}
+	/**
+	 * 消息
+	 *
+	 * @return String
+	 */
+	String getMessage();
+
+	/**
+	 * 状态码
+	 *
+	 * @return int
+	 */
+	int getCode();
 
 }
-
